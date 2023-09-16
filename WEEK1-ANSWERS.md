@@ -10,6 +10,8 @@ FROM STG_USERS;
 ```
 #### 130
 
+
+
 ### On average, how many orders do we receive per hour?
 
 ```sql
@@ -23,6 +25,8 @@ FROM (
 ```
 #### 7.520833
 
+
+
 ### On average, how long does an order take from being placed to being delivered?
 
 ```sql
@@ -31,6 +35,7 @@ FROM STG_ORDERS
 WHERE delivered_at IS NOT NULL;
 ```
 #### 93.403279
+
 
 
 ### How many users have only made one purchase? Two purchases? Three+ purchases?
@@ -49,6 +54,7 @@ SELECT
 FROM user_purchases;
 ```
 #### One: 25, Two: 28, Three+: 71
+
 
 
 ### On average, how many unique sessions do we have per hour?
