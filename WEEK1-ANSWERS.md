@@ -4,14 +4,23 @@
 
 ### How many users we have?
 
-`SELECT COUNT(*) 
-FROM {{ ref('stg_users') }};`
+`
+SELECT COUNT(*) 
+FROM {{ ref('stg_users') }};
+`
 
 
 ### On average, how many orders do we receive per hour?
 
-`SELECT COUNT(*) 
-FROM {{ ref('stg_users') }};`
+`
+SELECT AVG(order_count) AS avg_orders_per_hour 
+FROM (
+    SELECT DATE_TRUNC('HOUR', created_at) AS order_hour, 
+           COUNT(*) AS order_count 
+    FROM {{ ref('stg_orders') }}
+    GROUP BY order_hour
+);
+`
 
 
 ### On average, how long does an order take from being placed to being delivered?
