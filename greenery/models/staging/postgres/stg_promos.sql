@@ -1,3 +1,5 @@
+{{config(materialized='view')}}
+
 SELECT
     promo_id,
     discount,

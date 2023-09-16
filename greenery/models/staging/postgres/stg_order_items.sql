@@ -1,3 +1,5 @@
+{{config(materialized='view')}}
+
 SELECT
     order_id,
     product_id,

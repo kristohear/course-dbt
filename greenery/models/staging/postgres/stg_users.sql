@@ -1,3 +1,5 @@
+{{config(materialized='view')}}
+
 SELECT
     user_id,
     first_name,
